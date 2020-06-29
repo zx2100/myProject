@@ -4,12 +4,17 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+  // 路由映射列表
+const routes = [
   {
     path: '/',
-   
-    component: Home
+    redirect: "/console"
   },
+  {
+    path: '/console',
+    component:  () => import('@/views/console/Console')
+  }
+    
   // {
   //   path: '/about',
   //   name: 'About',
@@ -21,7 +26,8 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: "history"
 })
 
 export default router

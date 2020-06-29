@@ -5,6 +5,8 @@ import router from './router'
 // 导入viewUI
 import './plugins/iview.js'
 
+import '@/assets/css/public.css'
+
 Vue.config.productionTip = false
 
 new Vue({
