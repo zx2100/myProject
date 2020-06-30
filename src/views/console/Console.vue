@@ -1,28 +1,23 @@
 <template>
-  <div>
-    <Menu>
-      <MenuItem to="/home">Home</MenuItem>
-      <MenuItem to="/less">Less</MenuItem>
+   
+  <Layout >
+    <!-- 头部 -->
+    <HeaderContainer> </HeaderContainer>
+    
 
-    </Menu>
-    
-  </div>
-    
- 
+    <!-- 侧边栏 -->
+    <Sider></Sider>
+    <!-- 内容区 -->
+    <Content></Content>
+  </Layout>
 </template>
 
 
 <script>
-import { Row, Col, Icon,MenuItem,Layout, Menu }  from 'view-design'
+import HeaderContainer from "./HeaderContainer.vue"
 export default {
   components:{
-    Col,
-    Row,
-    Icon,
-    MenuItem,
-    Layout,
-    Menu
-
+    HeaderContainer
   }
 }
 </script>

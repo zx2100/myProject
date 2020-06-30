@@ -1,6 +1,24 @@
 import Vue from 'vue'
-import { Button } from 'view-design'
+import { Row, Col, Icon,MenuItem,Layout, Menu,Content, Sider, Header,Avatar,DropdownItem, Dropdown,
+  DropdownMenu, Badge, Tabs, TabPane,Drawer }  from 'view-design'
 
-Vue.component('Button', Button)
+// console.log("导入Iview")
+Vue.component("Col", Col)
+Vue.component("Row", Row)
+Vue.component("Icon", Icon)
+Vue.component("MenuItem", MenuItem)
+Vue.component("Layout", Layout)
+Vue.component("Menu", Menu)
+Vue.component("Avatar", Avatar)
 
+Vue.component("Sider", Sider)
+Vue.component("Content", Content)
+Vue.component("Header", Header)
+Vue.component("DropdownItem", DropdownItem)
+Vue.component("Dropdown", Dropdown)
+Vue.component("Tabs", Tabs)
+Vue.component("TabPane", TabPane)
+Vue.component("Drawer", Drawer)
+Vue.component("Badge", Badge)
+Vue.component("DropdownMenu", DropdownMenu)
 import 'view-design/dist/styles/iview.css'
