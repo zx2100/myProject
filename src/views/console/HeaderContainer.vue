@@ -24,15 +24,7 @@
                 Item 3
             </MenuItem>            
           </div>
-        </Menu>
-      
-
-      
-      
-      
-      
-      
-      
+        </Menu>      
       </Col>
 
 
@@ -72,7 +64,10 @@
             <Icon :size="20"  type="ios-cafe"  @click="drawerFlag = true" />
             
             <Drawer :closable="false" v-model="drawerFlag" >
-                <div slot="header">dd</div>
+                <!-- 自定义标题 -->
+                <div slot="header">
+                  <Avatar  class= "avatar" src="https://i.loli.net/2017/08/21/599a521472424.jpg"  />
+                </div>
                 <p>Some contents...</p>
                 <p>Some contents...</p>
                 <p>Some contents...</p>

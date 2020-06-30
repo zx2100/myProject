@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { Row, Col, Icon,MenuItem,Layout, Menu,Content, Sider, Header,Avatar,DropdownItem, Dropdown,
-  DropdownMenu, Badge, Tabs, TabPane,Drawer }  from 'view-design'
+  DropdownMenu, Badge, Tabs, TabPane,Drawer, Button }  from 'view-design'
 
 // console.log("导入Iview")
 Vue.component("Col", Col)
@@ -21,4 +21,6 @@ Vue.component("TabPane", TabPane)
 Vue.component("Drawer", Drawer)
 Vue.component("Badge", Badge)
 Vue.component("DropdownMenu", DropdownMenu)
+Vue.component("Button", Button)
+
 import 'view-design/dist/styles/iview.css'

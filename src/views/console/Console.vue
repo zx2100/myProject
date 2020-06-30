@@ -2,11 +2,11 @@
    
   <Layout >
     <!-- 头部 -->
-    <HeaderContainer> </HeaderContainer>
+    <HeaderContainer /> 
     
 
     <!-- 侧边栏 -->
-    <Sider></Sider>
+    <SiderContainer />
     <!-- 内容区 -->
     <Content></Content>
   </Layout>
@@ -15,9 +15,11 @@
 
 <script>
 import HeaderContainer from "./HeaderContainer.vue"
+import SiderContainer from "./SiderContainer"
 export default {
   components:{
-    HeaderContainer
+    HeaderContainer,
+    SiderContainer
   }
 }
 </script>
