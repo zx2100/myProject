@@ -9,6 +9,11 @@ import '@/assets/css/public.css'
 
 Vue.config.productionTip = false
 
+
+// 引入字体
+import "./plugins/customFont"
+
+
 new Vue({
   router,
   render: h => h(App)

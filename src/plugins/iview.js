@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { Row, Col, Icon,MenuItem,Layout, Menu,Content, Sider, Header,Avatar,DropdownItem, Dropdown,
-  DropdownMenu, Badge, Tabs, TabPane,Drawer, Button }  from 'view-design'
+  DropdownMenu, Badge, Tabs, TabPane,Drawer, Button, Submenu }  from 'view-design'
 
 // console.log("导入Iview")
 Vue.component("Col", Col)
@@ -10,7 +10,7 @@ Vue.component("MenuItem", MenuItem)
 Vue.component("Layout", Layout)
 Vue.component("Menu", Menu)
 Vue.component("Avatar", Avatar)
-
+Vue.component("Submenu", Submenu)
 Vue.component("Sider", Sider)
 Vue.component("Content", Content)
 Vue.component("Header", Header)

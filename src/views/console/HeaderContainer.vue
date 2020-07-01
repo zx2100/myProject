@@ -13,15 +13,15 @@
           <div class="layout-nav">
             <MenuItem name="1">
                 <Icon type="ios-navigate"></Icon>
-                Item 1
+                首页
             </MenuItem>
             <MenuItem name="2">
                 <Icon type="ios-keypad"></Icon>
-                Item 2
+                文章
             </MenuItem>
             <MenuItem name="3">
                 <Icon type="ios-analytics"></Icon>
-                Item 3
+                应用
             </MenuItem>            
           </div>
         </Menu>      
@@ -61,15 +61,24 @@
           
           </Col>
           <Col span=8>
-            <Icon :size="20"  type="ios-cafe"  @click="drawerFlag = true" />
+            <!-- <a href="javascript:;" @click="changeDrawerFlag" >
+              <svg class="icon" >             
+                <use xlink:href="#icon-qianbi"></use>                        
+              </svg>
+            </a> -->
+            
+            <Icon type="md-brush" :size="20"   @click="drawerFlag = true" />
+            <!-- <Icon type="md-brush" :size="20"   @click="drawerFlag = true" /> -->
             
             <Drawer :closable="false" v-model="drawerFlag" >
                 <!-- 自定义标题 -->
                 <div slot="header">
+                  
                   <Avatar  class= "avatar" src="https://i.loli.net/2017/08/21/599a521472424.jpg"  />
                 </div>
                 <p>Some contents...</p>
                 <p>Some contents...</p>
+                
                 <p>Some contents...</p>
             </Drawer>
           </Col>
@@ -111,6 +120,7 @@ export default {
 .info{
   text-align: center;
   /* transform: translateY(-50%) */
+  transition: all 300ms
 }
 .avatar {
   /* 为了看上去整齐点 */
