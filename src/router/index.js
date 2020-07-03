@@ -13,6 +13,11 @@ const routes = [
   {
     path: '/console',
     component:  () => import('@/views/console/Console')
+  },
+  {
+    path: "/login",
+    component:  () => import('@/views/login/Login')
+
   }
     
   // {
