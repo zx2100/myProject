@@ -46,6 +46,8 @@ export default {
   z-index: 2;
 }
 .left{
+  width: 100%;
+  height: 100%;
   text-align: center;
   background-color: #fff;
 }

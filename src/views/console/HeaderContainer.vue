@@ -1,14 +1,11 @@
 <template>
-  <Header class="header">
-    <Row >
-      <!-- 左边 -->
-      <Col span="4" offset="1">
-        <img class = "logo" src="@/assets/img/rishi.png" alt="logo" srcset="">
-      </Col>
-
-      <!-- 中间 -->
-      <Col span="14">
-       <Menu mode="horizontal"  active-name="1">
+  <NavigateBar>
+    <!-- 左边 -->
+    <img slot="left" class = "logo" src="@/assets/img/rishi.png" alt="logo" srcset="">
+    
+    <!-- 中间 -->
+    <div slot="center">
+      <Menu mode="horizontal"  active-name="1">
           <div class="layout-logo"></div>
           <div class="layout-nav">
             <MenuItem name="1">
@@ -25,12 +22,11 @@
             </MenuItem>            
           </div>
         </Menu>      
-      </Col>
+    </div>
 
-
-      <!-- 右边 -->
-      <Col span="4" class="info">
-        <Row>
+    <!-- 右边 -->
+    <div slot="right">
+      <Row>
           <!-- ===========头像==== -->
           <Col span=8>  
             <Dropdown>
@@ -82,20 +78,23 @@
                 <p>Some contents...</p>
             </Drawer>
           </Col>
-        </Row>
-      
-      </Col>
-    </Row>
-  </Header>
+      </Row>
+    </div>
+  </NavigateBar>
+  
   
 </template>
 
 <script>
+import NavigateBar from "@/components/navigate/navigateBar"
 export default {
   data(){
     return {
       drawerFlag: false
     }
+  },
+  components: {
+    NavigateBar
   }
 }
 </script>
