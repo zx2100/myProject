@@ -1,16 +1,16 @@
 <template>
   <!-- NavidateBar 是顶部导航条,通过格栅,分成左中右3部分 -->
-  <div class=header>
-    <Row >
+  <!-- <div class=header> -->
+    <Row class=header>
       <!-- =================================左================================ -->
-      <Col span="4">
-        <div class="left">
+      <Col span="4" >
+        <div class="left" >
           <slot name="left"></slot>
         </div>
       </Col>
 
       <!-- ======= =========================中================================ -->
-      <Col span="14">
+      <Col span="14" >
         <div class="center">
           <slot name="center"></slot>
         </div>
@@ -18,14 +18,14 @@
       </Col>
 
       <!-- =================================右================================ -->
-      <Col span="4">
-        <div  class="right">
+      <Col span="4" >
+        <div class="right">
              <slot name="right"></slot>
         </div>
 
       </Col>
     </Row>
-  </div>
+  <!-- </div> -->
   
 </template>
 
@@ -47,17 +47,18 @@ export default {
 }
 .left{
   width: 100%;
-  height: 100%;
+  height: 60px;
   text-align: center;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .center{
   text-align: left;
+  height: 60px;
 }
 .right{
   height: 60px;
-  background-color: #fff;
+  /* background-color: #fff; */
   line-height: 60px;
 }
 </style>

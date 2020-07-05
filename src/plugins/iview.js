@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import { Row, Col, Icon,MenuItem,Layout, Menu,Content, Sider, Header,Avatar,DropdownItem, Dropdown,
-  DropdownMenu, Badge, Tabs, TabPane,Drawer, Button, Submenu }  from 'view-design'
+  DropdownMenu, Badge, Tabs, TabPane,Drawer, Button, Submenu, Form,  FormItem, Input  }  from 'view-design'
 
 // console.log("导入Iview")
 Vue.component("Col", Col)
+Vue.component("Form", Form)
+Vue.component("FormItem", FormItem)
+Vue.component("Input", Input)
 Vue.component("Row", Row)
 Vue.component("Icon", Icon)
 Vue.component("MenuItem", MenuItem)
