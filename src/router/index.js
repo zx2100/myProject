@@ -35,4 +35,23 @@ const router = new VueRouter({
   mode: "history"
 })
 
+// 挂载全局导航首位
+router.beforeEach((to, from, next)=>{
+  // console.log(to)
+  // 访问登录页,直接放行
+  if (to.path ==="/login") return next()
+  
+  // 访问需要权限页面,需要登录
+  if (to.path ==='/console'){
+    // 判断是否有cookies
+
+    let cookiesItem =  Vue.$cookies.get("sessionid")
+    console.log(cookiesItem)
+    return cookiesItem? next(): next("/login")
+  }
+  
+  // 不匹配需要认证的,默认放行
+  next()
+})
+
 export default router

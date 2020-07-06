@@ -26,7 +26,7 @@
         </Row>
         
         <FormItem>
-            <Button type="primary" @click="handleSubmit('formInline')">登陆</Button>
+            <Button :disabled="formInline.isButtonAllow" type="primary" @click="handleSubmit('formInline')">登陆</Button>
         </FormItem>
        
       </Form>
@@ -40,6 +40,11 @@
 
 <script>
 import NavigateBar from "@/components/navigate/navigateBar"
+ 
+import { Login } from "@/plugins/login_request.js"
+
+import axios from 'axios'
+
 export default {
   components: { 
     NavigateBar
@@ -48,7 +53,8 @@ export default {
     return {
       formInline: {
         user: '',
-        password: ''
+        password: '',
+        isButtonAllow: false
       },
       ruleInline: {
         user: [
@@ -63,12 +69,32 @@ export default {
   },
   methods: {
     handleSubmit(name) {
+
+      let data = new FormData()
       this.$refs[name].validate((valid) => {
-        
+       
         if (valid) {
-            this.$Message.success('Success!');
+          Login(this.formInline.user, this.formInline.password).then( result =>{
+            console.log(result)
+            this.formInline.isButtonAllow = false
+            // 取消显示正在登录
+            setTimeout(msg,0);
+            // 显示登录结果
+            result.status == "200"? this.$Message.success(result.result+",正在跳转"): this.$Message.error("登录失败")
+          })
+          
+          // 禁止点击登录按钮
+          this.formInline.isButtonAllow = true
+          // 显示正在登录
+          const msg = this.$Message.loading({
+                    content: '正在登录...',
+                    duration: 0
+                });
+          
         } else {
-            this.$Message.error('Fail!');
+          // 
+          this.formInline.isButtonAllow = false
+          this.$Message.error('验证不通过');
         }
     })
 }
@@ -88,13 +114,10 @@ export default {
   .login_container{
     width: 100%;
     height: 100%;
-    background-color: #2b85e4 ;
+    background-color: #17233d ;
     /* text-align: center; */
   }
-  .navigate{
-    
-    background-color: #2b85e4 !important;
-  }
+ 
   .center{
     text-align: center;  
   }

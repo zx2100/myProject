@@ -13,6 +13,9 @@ Vue.config.productionTip = false
 // 引入字体
 import "./plugins/customFont"
 
+// 获取cookies插件
+import './plugins/vue-cookies'
+
 
 new Vue({
   router,
