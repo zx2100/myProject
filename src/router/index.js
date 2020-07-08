@@ -43,11 +43,11 @@ router.beforeEach((to, from, next)=>{
   
   // 访问需要权限页面,需要登录
   if (to.path ==='/console'){
-    // 判断是否有cookies
+    // 判断是否有token
 
-    let cookiesItem =  Vue.$cookies.get("sessionid")
-    console.log(cookiesItem)
-    return cookiesItem? next(): next("/login")
+    let token = window.sessionStorage.getItem("token")
+    // console.log(token)
+    return token? next(): next("/login")
   }
   
   // 不匹配需要认证的,默认放行

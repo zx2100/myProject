@@ -52,8 +52,8 @@ export default {
   data () {
     return {
       formInline: {
-        user: '',
-        password: '',
+        user: 'admin',
+        password: '523569',
         isButtonAllow: false
       },
       ruleInline: {
@@ -68,11 +68,10 @@ export default {
     }
   },
   methods: {
+    // 登录按钮
     handleSubmit(name) {
-
       let data = new FormData()
       this.$refs[name].validate((valid) => {
-       
         if (valid) {
           Login(this.formInline.user, this.formInline.password).then( result =>{
             console.log(result)
@@ -80,7 +79,14 @@ export default {
             // 取消显示正在登录
             setTimeout(msg,0);
             // 显示登录结果
-            result.status == "200"? this.$Message.success(result.result+",正在跳转"): this.$Message.error("登录失败")
+            result.status == "200"? this.$Message.success(result.msg+",正在跳转"): this.$Message.error("登录失败")
+            // 登录成功会返回Token,需要保存下来
+            window.sessionStorage.setItem("token", result.results)
+            this.$router.push("/console")
+          }).catch(result =>{
+            setTimeout(msg,0);
+            this.formInline.isButtonAllow = false
+            this.$Message.error('验证不通过');
           })
           
           // 禁止点击登录按钮

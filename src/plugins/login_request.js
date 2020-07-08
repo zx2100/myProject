@@ -1,12 +1,12 @@
 import {request} from './network'
 
-export function Login(username, passwd){
+export function Login(username, password){
   return request({
-    url: '/user/login',
+    url: '/api/v1/user/auth',
     method: 'post',
     data: {
       username,
-      passwd
+      password
     }
   })
 }

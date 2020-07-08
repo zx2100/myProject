@@ -5,6 +5,7 @@ export function request(config){
     baseURL: "http://127.0.0.1:8000",
     // timeout: ,
   })
+  instance.defaults.timeout = 4000;
   instance.interceptors.response.use(res => {
     return res.data
   })
