@@ -1,6 +1,5 @@
 <template>
-  <div class="login_container">
-  
+  <div class="login_container"> 
     <div class="login_div">
          <img src="@/assets/img/rishi.png" class = "logo" alt="logo" srcset="" >
 
@@ -26,7 +25,7 @@
         </Row>
         
         <FormItem>
-            <Button :disabled="formInline.isButtonAllow" type="primary" @click="handleSubmit('formInline')">登陆</Button>
+            <Button :disabled="formInline.isButtonAllow" type="primary" @click="handleLogin('formInline')">登陆</Button>
         </FormItem>
        
       </Form>
@@ -40,9 +39,7 @@
 
 <script>
 import NavigateBar from "@/components/navigate/navigateBar"
- 
 import { Login } from "@/plugins/login_request.js"
-
 import axios from 'axios'
 
 export default {
@@ -68,25 +65,26 @@ export default {
     }
   },
   methods: {
-    // 登录按钮
-    handleSubmit(name) {
+    handleLogin(name) {
       let data = new FormData()
       this.$refs[name].validate((valid) => {
         if (valid) {
           Login(this.formInline.user, this.formInline.password).then( result =>{
-            console.log(result)
             this.formInline.isButtonAllow = false
             // 取消显示正在登录
             setTimeout(msg,0);
             // 显示登录结果
-            result.status == "200"? this.$Message.success(result.msg+",正在跳转"): this.$Message.error("登录失败")
+            result.meta.status == "200"? this.$Message.success(result.meta.msg+",正在跳转"): this.$Message.error("登录失败")
             // 登录成功会返回Token,需要保存下来
-            window.sessionStorage.setItem("token", result.results)
+            window.sessionStorage.setItem("token", result.data.token)
+            // 保存到vuex中
+            this.$store.commit('setUserProfile', result)
             this.$router.push("/console")
           }).catch(result =>{
+            console.log(result)
             setTimeout(msg,0);
             this.formInline.isButtonAllow = false
-            this.$Message.error('验证不通过');
+            this.$Message.error('认证失败');
           })
           
           // 禁止点击登录按钮

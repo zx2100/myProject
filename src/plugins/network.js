@@ -6,6 +6,16 @@ export function request(config){
     // timeout: ,
   })
   instance.defaults.timeout = 4000;
+  instance.interceptors.request.use(config =>{
+    // 尝试获取token
+    let token = window.sessionStorage.getItem("token")
+    if (token){
+      config.headers.Authorization = "Bearer " + token
+    }
+    
+    
+    return config
+  })
   instance.interceptors.response.use(res => {
     return res.data
   })

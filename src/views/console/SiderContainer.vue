@@ -1,9 +1,10 @@
 <template>
   <!-- 侧边栏 -->
-  <Row>
+  <!-- <Row> -->
     <!-- 暂时这样用 -->
-    <Col span="24" >
-      <Sider class="sider" width="240" :class="{'sider-hide':isCollapsed}" @on-collapse="collapse" collapsible v-model="isCollapsed">
+    <!-- <Col span="24" > -->
+    <div>
+      <Sider class="sider" :class="{'sider-hide':isCollapsed}" @on-collapse="collapse" collapsible v-model="isCollapsed">
          <Menu theme="dark" class="sider-menu" active-name="option1">
             <MenuItem name="option1">
               <icon type="ios-search" />
@@ -16,9 +17,11 @@
             </MenuItem>
           </Menu>
       </Sider>
+    </div>
+      
 
-    </Col>
-  </Row>
+    <!-- </Col>
+  </Row> -->
   
 </template>
 
@@ -43,6 +46,7 @@ export default {
   height: 100%;
   top: 60px; 
   overflow: hidden;
+  text-align: left;
 }
 
 .sider-menu{

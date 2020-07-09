@@ -1,32 +1,26 @@
 <template>
-  <NavigateBar>
-    <!-- 左边 -->
-    <img slot="left" class = "logo" src="@/assets/img/rishi.png" alt="logo" srcset="">
-    
-    <!-- 中间 -->
-    <div slot="center">
-      <Menu mode="horizontal"  active-name="1">
-          <div class="layout-logo"></div>
-          <div class="layout-nav">
+   <NavigateBar>
+      <!-- 左 -->
+      <img slot="left" class = "logo" src="@/assets/img/rishi.png" alt="logo" srcset="">
+     
+      <!-- 中间 -->
+      <div slot="center">
+        <Menu mode="horizontal"  active-name="1">
             <MenuItem name="1">
                 <Icon type="ios-navigate"></Icon>
-                首页
+                文章
             </MenuItem>
             <MenuItem name="2">
                 <Icon type="ios-keypad"></Icon>
-                文章
-            </MenuItem>
-            <MenuItem name="3">
-                <Icon type="ios-analytics"></Icon>
                 应用
-            </MenuItem>            
-          </div>
-        </Menu>      
-    </div>
+            </MenuItem>
+                 
+        </Menu>     
+      </div>
 
-    <!-- 右边 -->
-    <div slot="right">
-      <Row>
+      <!-- 右边 -->
+      <div slot="right">
+        <Row>
           <!-- ===========头像==== -->
           <Col span=8>  
             <Dropdown>
@@ -56,16 +50,8 @@
             </Dropdown>
           
           </Col>
-          <Col span=8>
-            <!-- <a href="javascript:;" @click="changeDrawerFlag" >
-              <svg class="icon" >             
-                <use xlink:href="#icon-qianbi"></use>                        
-              </svg>
-            </a> -->
-            
+          <Col span=8> 
             <Icon type="md-brush" :size="20"   @click="drawerFlag = true" />
-            <!-- <Icon type="md-brush" :size="20"   @click="drawerFlag = true" /> -->
-            
             <Drawer :closable="false" v-model="drawerFlag" >
                 <!-- 自定义标题 -->
                 <div slot="header">
@@ -78,45 +64,36 @@
                 <p>Some contents...</p>
             </Drawer>
           </Col>
-      </Row>
-    </div>
-  </NavigateBar>
-  
-  
+        </Row>
+      
+      </div>
+    </NavigateBar>
+
 </template>
 
 <script>
 import NavigateBar from "@/components/navigate/navigateBar"
+
 export default {
+  components:{
+    NavigateBar,
+  },
   data(){
     return {
       drawerFlag: false
     }
-  },
-  components: {
-    NavigateBar
   }
 }
 </script>
 
 <style scope>
-
-.logo{
-  height: 50px;
-  margin-top: 5px;
-}
-.ivu-menu-horizontal.ivu-menu-light:after{
-  display: none;
-}
-.info{
-  text-align: center;
-  /* transform: translateY(-50%) */
-  transition: all 300ms
-}
 .avatar {
   /* 为了看上去整齐点 */
   margin-top: -5px; 
 }
 
+.logo{
+  height: 60px;
+}
 
 </style>

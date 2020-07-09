@@ -3,7 +3,7 @@
   <!-- <div class=header> -->
     <Row class=header>
       <!-- =================================左================================ -->
-      <Col span="4" >
+      <Col span="4" offset="1">
         <div class="left" >
           <slot name="left"></slot>
         </div>

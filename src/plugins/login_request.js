@@ -10,3 +10,10 @@ export function Login(username, password){
     }
   })
 }
+
+export function getProfile(userid){
+  return request({
+    url: '/api/v1/user/profile/' + userid,
+    method: 'get',
+  })
+}
