@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+// import { component } from 'vue/types/umd'
 
 Vue.use(VueRouter)
 
@@ -12,7 +13,18 @@ const routes = [
   },
   {
     path: '/console',
-    component:  () => import('@/views/console/Console')
+    component:  () => import('@/views/console/Console'),
+    children:[
+      {
+        path: "",
+        redirect: "hello"
+      },
+      {
+        path: 'hello',
+        component: ()=> import('@/views/console/hello/Hello')
+      }
+    ]
+   
   },
   {
     path: "/login",
@@ -20,14 +32,7 @@ const routes = [
 
   }
     
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
+ 
 ]
 
 const router = new VueRouter({
@@ -44,7 +49,6 @@ router.beforeEach((to, from, next)=>{
   // 访问需要权限页面,需要登录
   if (to.path ==='/console'){
     // 判断是否有token
-
     let token = window.sessionStorage.getItem("token")
     // console.log(token)
     return token? next(): next("/login")

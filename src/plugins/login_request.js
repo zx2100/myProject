@@ -17,3 +17,11 @@ export function getProfile(userid){
     method: 'get',
   })
 }
+
+export function getArticle(){
+  return request({
+    url: '/api/v1/article/all',
+    method: 'get',
+  })
+}
+

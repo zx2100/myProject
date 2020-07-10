@@ -1,7 +1,8 @@
 <template>
    <NavigateBar>
       <!-- 左 -->
-      <img slot="left" class = "logo" src="@/assets/img/rishi.png" alt="logo" srcset="">
+      <!-- <img slot="left" class = "logo" src="@/assets/images/rishi.png" alt="logo" srcset=""> -->
+      <span>Lzw</span>
      
       <!-- 中间 -->
       <div slot="center">
@@ -94,6 +95,9 @@ export default {
 
 .logo{
   height: 60px;
+}
+.ivu-menu-horizontal.ivu-menu-light:after{
+  width: 0;
 }
 
 </style>

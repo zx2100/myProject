@@ -3,17 +3,17 @@
   <div class="console">
     <!-- 导航条 -->
     <HeaderContainer />
-    
+    <!--  -->
     <!-- 侧边栏 -->
-    <Body>
-       <SiderContainer slot="left"/>
-       <Contents slot="right" />
-    </Body>
-   
+    <router-view class="console_view"  />
+
+  
+      
   </div>
  
-   
-   
+    <!-- <SiderContainer slot="left"/>
+       <Contents slot="right" />
+    -->
  
 </template>
 
@@ -57,5 +57,8 @@ export default {
 .console{
   width: 100%;
   height: 100%;
+}
+.console_view{
+  margin-top: 70px;
 }
 </style>

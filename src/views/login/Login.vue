@@ -1,7 +1,7 @@
 <template>
   <div class="login_container"> 
     <div class="login_div">
-         <img src="@/assets/img/rishi.png" class = "logo" alt="logo" srcset="" >
+         <img src="@/assets/images/rishi.png" class = "logo" alt="logo" srcset="" >
 
       <Form ref="formInline" :model="formInline" :rules="ruleInline" >
         <Row> 
