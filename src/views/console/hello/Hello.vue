@@ -3,13 +3,11 @@
     <div slot="content">
       <TitleBanner :isShowSwitch="true" switchTitle="测试" >
           <div slot="left"> 
-            <span>你好，世界</span>
+            <span>你好</span>
           </div>
-          <!-- <div slot="right">
-            <Switch1 ></Switch1>
-            <span>测试</span>
-          </div> -->
+
         </TitleBanner>
+        <!-- 首页欢迎图 -->
         <Card class="hello_card" dis-hover :bordered="false">
           <div class="hello_box">
             <img src="@/assets/images/helloWorld.png" alt="" srcset="">
@@ -46,25 +44,13 @@
            <TitleBanner >
             <div slot="left">
               标签
-            </div>
-
-              
-            
+            </div>                   
           </TitleBanner>
-
         </Col >
-
-      </Row>
-
-    
-      
-    </div>
-    
+      </Row>     
+    </div> 
   </Contents>
-  
-  
-  
-  
+   
 </template>
 
 <script>
@@ -104,14 +90,16 @@ export default {
 }
 </script>
 
-<style scope>
+<style lang="less" scoped>
+.ivu-card{
+  border-radius: .625rem;
+}
 
 .hello_box{
   height: 191px;
   width: 336px;
   margin: 0 auto;
   
-
 }
 
 .hello_box img{
@@ -122,6 +110,7 @@ export default {
 .hello_card{
   height: 400px;
   background-color: #17233d;
+  // border-radius: .625rem
 }
 
 .hello_banner_right{
@@ -132,5 +121,6 @@ export default {
   color: #515a6e;
   font-weight: normal;
 }
+
 
 </style>
