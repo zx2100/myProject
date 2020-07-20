@@ -47,12 +47,12 @@ router.beforeEach((to, from, next)=>{
   if (to.path ==="/login") return next()
   
   // 访问需要权限页面,需要登录
-  if (to.path ==='/console'){
-    // 判断是否有token
-    let token = window.sessionStorage.getItem("token")
-    // console.log(token)
-    return token? next(): next("/login")
-  }
+  // if (to.path ==='/console'){
+  //   // 判断是否有token
+  //   let token = window.sessionStorage.getItem("token")
+  //   // console.log(token)
+  //   return token? next(): next("/login")
+  // }
   
   // 不匹配需要认证的,默认放行
   next()

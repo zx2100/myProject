@@ -29,6 +29,9 @@ import { getProfile } from "@/plugins/login_request"
 import Body from "@/components/body/Body"
 
 export default {
+  props:{
+    data: ""
+  },
   components:{
     HeaderContainer,
     SiderContainer,
@@ -43,7 +46,7 @@ export default {
   mounted(){
     let uid = this.$store.getters.getUserProfile.userid
     getProfile(2).then(value =>{
-      console.log(value)
+      // console.log(value)
     })
   }
 }

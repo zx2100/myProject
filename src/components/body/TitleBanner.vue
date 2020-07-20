@@ -1,15 +1,12 @@
 <template>
-  <div class="banner" >
-    <Row>
-      <Col class="banner_title" span="12">
-        
-        <slot name="title">未命名</slot>
-      </Col>
-      <Col span="12" class="banner_left" >
-        <Switch1 v-show="isShowSwitch"  v-model="switchFlag" @on-change="change" />
-        <span>{{switchTitle}}</span>
-      </Col>
-    </Row>
+  <div class="banner">
+    <div class="banner_left">
+      <slot name="left"></slot>
+    </div>
+    <div class="banner_right">
+       <slot name="right"></slot>
+    </div>
+    
   </div>
     
       
@@ -17,46 +14,36 @@
 
 <script>
 export default {
-  props:{
-    isShowSwitch: false,
-    switchTitle: {
-      type: String,
-      default: ""
-    }
-  },
-  data(){
-    return {
-      switchFlag: false
-    }
-  },
-  methods:{
-    change(){
-
-    }
-  }
   
 }
 </script>
 
 <style scoped>
-.banner{
-  background-color: #f5f7f9;
-  font-size: 20px;
-  padding: 16px 0;
-  
+.banner {
+  margin: 18px auto;
+  height: 35px;
+  /* font-weight: bolder ; */
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  /* border-radius: 15px; */
 }
-
 
 .banner_left{
-  text-align: end;
-  
+  display: flex;
+  align-items: center;
+  width: 50%;
 }
-.banner_left span{
-  margin-left: 10px;
-  font-size: 14px;
-  cursor: default;
+
+.banner_right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
 }
-.banner_title{
-  cursor: default;
-}
+
+
 </style>

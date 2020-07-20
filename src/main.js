@@ -3,6 +3,9 @@ import App from './App.vue'
 import store from './store/index'
 import router from './router'
 
+import less from 'less'
+Vue.use(less)
+
 // 导入viewUI
 import './plugins/iview.js'
 
