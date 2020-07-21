@@ -95,7 +95,7 @@ export default {
         cut_length+=30;
       } 
       console.log(cut_length,length)
-      return this.article.content
+      return this.article.content + "..."
     }
   }
 }
@@ -105,24 +105,17 @@ export default {
 @import '@/assets/css/base.less';
 .describe_card {
   margin-bottom: 1.25rem;
-
-  height:  12.5rem;
   padding-bottom: 0;
   transform:translate(0,0);
-  
   .describe_title {
       font-size: 18px;
   }
   
+  // 只显示2行
   .describe_subject{
-    line-height: 30px;
-    display:-webkit-box;
     width: 80%;
-    padding: .625rem 0;
-    -webkit-line-clamp:2;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
+    padding: 1rem 0;
+    padding-bottom: 56px;
   }
 
   .describe_date{

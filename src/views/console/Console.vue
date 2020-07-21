@@ -7,8 +7,6 @@
     <!-- 侧边栏 -->
     <router-view class="console_view"  />
 
-  
-      
   </div>
  
     <!-- <SiderContainer slot="left"/>
@@ -30,7 +28,7 @@ import Body from "@/components/body/Body"
 
 export default {
   props:{
-    data: ""
+    data1: ""
   },
   components:{
     HeaderContainer,
@@ -46,7 +44,8 @@ export default {
   mounted(){
     let uid = this.$store.getters.getUserProfile.userid
     getProfile(2).then(value =>{
-      // console.log(value)
+      console.log(value)
+
     })
   }
 }
