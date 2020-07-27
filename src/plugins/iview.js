@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import { Row, Col, Icon,MenuItem,Layout, Menu,Content, Sider, Header,Avatar,DropdownItem, Dropdown,
   DropdownMenu, Badge, Tabs, TabPane,Drawer, Button, Submenu, Form,  FormItem, Input,
-  Message,Card,Switch   }  from 'view-design'
+  Message,Card,Switch,ButtonGroup    }  from 'view-design'
 
 // console.log("导入Iview")
 Vue.prototype.$Message = Message
 // Vue.use(Message)
 // Vue.use(Message)
 Vue.component("Switch1", Switch)
+Vue.component("ButtonGroup", ButtonGroup)
 Vue.component("Col", Col)
 Vue.component("Card", Card)
 Vue.component("Form", Form)

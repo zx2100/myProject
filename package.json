@@ -11,6 +11,8 @@
     "core-js": "^3.6.5",
     "less": "^3.11.3",
     "less-loader": "^6.2.0",
+    "marked": "^1.1.1",
+    "mavon-editor": "^2.9.0",
     "view-design": "^4.0.0",
     "vue": "^2.6.11",
     "vue-cookies": "^1.7.0",

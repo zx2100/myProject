@@ -17,9 +17,31 @@
     <!--  底部横幅-->
     <TitleBanner class="foot_banner">
       <div slot="left">
-        <Button type="primary" shape="circle" size="large" >阅读此文</Button>
+        <Button shape="circle" size="large" >
+          
+          阅读此文</Button>
+       
       </div>
+      <div slot="right" class="foot_banner_right">
+        <!-- <div> -->
+       <ButtonGroup >
+        <Button type="text" shape="circle" >
+            <Icon size="24" type="md-eye" > </Icon>
+            <span>
+              123
+            </span>
+        </Button>
 
+         <Button type="text" shape="circle" >
+          <Icon size="24" type="md-heart" />
+        </Button>
+         <Button type="text" shape="circle" >
+          <Icon size="24" type="md-chatbubbles" />
+        </Button>
+      </ButtonGroup>
+        <!-- </div> -->
+        
+      </div>
     </TitleBanner>
 
   </Card>
@@ -44,6 +66,7 @@ export default {
     date(){
       // 只返回月日年，例如五月 24, 2020
       // 取出日期
+      
       let arr = this.article.create.split(" ")[0]
       let [y,m,d] = arr.split("-")
       // 转换月份
@@ -87,15 +110,7 @@ export default {
       return m+" "+d+", "+y
     },
     subject(){
-      let length = this.article.content.length
-      // 取出不超过52个字符
-      let cut_length = parseInt(length % 52) 
-      // 如果结果小于20，则+30
-      if (cut_length <15){
-        cut_length+=30;
-      } 
-      console.log(cut_length,length)
-      return this.article.content + "..."
+      return this.article.brief
     }
   }
 }
@@ -113,7 +128,7 @@ export default {
   
   // 只显示2行
   .describe_subject{
-    width: 80%;
+    width: 100%;
     padding: 1rem 0;
     padding-bottom: 56px;
   }
@@ -122,6 +137,7 @@ export default {
     font-size: 13px;
     color: @font-color;
     // margin-top: .625rem;
+    
   }
   
 }
@@ -130,7 +146,23 @@ export default {
 
 .foot_banner{
   position: fixed;
+  
   bottom: 0;
+  left: 16px;
+  right: 16px;
+  width: 100% -16px;
+
+  .foot_banner_right{
+    // background-color: #000;
+    display: flex;
+    width: 100%;
+    // flex-direction: r;
+    // flex:1;
+    justify-content: flex-end;
+    flex-grow: 1;
+    align-items: center;
+    
+  }
 }
 </style>
 

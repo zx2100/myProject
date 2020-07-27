@@ -4,11 +4,11 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-  // 路由映射列表
+  // 路由映射表
 const routes = [
   {
     path: '/',
-    redirect: "/login"
+    redirect: "/articles"
   },
   {
     path: '/console',
@@ -27,10 +27,25 @@ const routes = [
    
   },
   {
-    path: "/login",
-    component:  () => import('@/views/login/Login')
+    path: "/articles",
+    component:  () => import('@/views/articles/Index'),
+    children: [
+      {
+        path: "",
+        redirect: "details"
+      },
+      {
+        path: "write",
+        component:  () => import('@/views/articles/Write')
+      },
+      {
+        path: "details",
+        component:  () => import('@/views/articles/Details')
+      }
+    ]
+    
+  },
 
-  }
     
  
 ]

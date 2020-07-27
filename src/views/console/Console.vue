@@ -41,13 +41,13 @@ export default {
       drawerFlag: false
     }
   },
-  mounted(){
-    let uid = this.$store.getters.getUserProfile.userid
-    getProfile(2).then(value =>{
-      console.log(value)
+  // mounted(){
+  //   let uid = this.$store.getters.getUserProfile.userid
+  //   getProfile(2).then(value =>{
+  //     console.log(value)
 
-    })
-  }
+  //   })
+  // }
 }
 </script>
 

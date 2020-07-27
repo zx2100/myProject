@@ -13,6 +13,8 @@ import '@/assets/css/public.css'
 
 Vue.config.productionTip = false
 
+// 导入markdown
+import './plugins/markdown.js'
 
 // 引入字体
 import "./plugins/customFont"

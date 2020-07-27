@@ -81,7 +81,7 @@ export default {
     getArticle().then(val => {
       console.log(val)
       if (val) {
-        this.article = val
+        this.article = val.data
       }
     })
     console.log(this.article)
