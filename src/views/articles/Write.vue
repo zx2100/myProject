@@ -7,7 +7,7 @@
       </div>
     </NavigateBar>
 
-    <Editor class="editor" />
+    <Editor class="editor" @save="post" />
 
   </div>
 </template>
@@ -20,6 +20,11 @@ export default {
   components: {
     NavigateBar,
     Editor
+  },
+  methods: {
+    post: function(value, render){
+      console.log(value, render)
+    }
   }
 }
 </script>
