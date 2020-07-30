@@ -22,7 +22,7 @@ import HeaderContainer from "./HeaderContainer.vue"
 import SiderContainer from "./SiderContainer"
 import Contents from "./Contents"
 // 获取用户profile
-import { getProfile } from "@/plugins/login_request"
+import { getProfile } from "@/plugins/request"
 
 import Body from "@/components/body/Body"
 

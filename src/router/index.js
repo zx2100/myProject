@@ -45,6 +45,10 @@ const routes = [
     ]
     
   },
+  {
+    path: "/login",
+    component:  () => import('@/views/login/Login')
+  }
 
     
  
@@ -62,10 +66,10 @@ router.beforeEach((to, from, next)=>{
   if (to.path ==="/login") return next()
   
   // 访问需要权限页面,需要登录
-  if (to.path ==='/console'){
+  if (to.path ==='/articles/write'){
     // 判断是否有token
     let token = window.sessionStorage.getItem("token")
-    // console.log(token)
+    console.log(token)
     return token? next(): next("/login")
   }
   

@@ -39,7 +39,7 @@
 
 <script>
 import NavigateBar from "@/components/navigate/navigateBar"
-import { Login } from "@/plugins/login_request.js"
+import { Login } from "@/plugins/request.js"
 import axios from 'axios'
 
 export default {

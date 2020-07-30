@@ -63,7 +63,7 @@ import DescribeCard from '@/components/body/DescribeCard'
 
 
 // ************函数导入
-import{ getArticle } from "@/plugins/login_request"
+import{ getArticle } from "@/plugins/request"
 export default {
   components:{
     SiderContainer,

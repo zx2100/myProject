@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { getArticle } from '@/plugins/login_request'
+import { getArticle } from '@/plugins/request'
 export default {
   data(){
     return {

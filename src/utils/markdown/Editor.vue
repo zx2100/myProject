@@ -1,5 +1,5 @@
 <template>
-     <mavon-editor fontSize="16px" codeStyle="vs2015" v-model="value" @save="post" />
+     <mavon-editor fontSize="16px" codeStyle="vs2015" v-model="value" @save="save" />
 </template>
 
 <script>
@@ -11,8 +11,8 @@ export default {
     }
   },
   methods: {
-    post: function(value, render){
-      console.log(value)
+    save: function(value, render){
+      this.$emit('save', value, render)
     }
   }
 }
