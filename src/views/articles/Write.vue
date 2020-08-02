@@ -4,8 +4,10 @@
     <NavigateBar class="console">
       <div slot="center" class="title">
         <!-- 标题和文章分类 -->
-        <Input  style="width: 100%;" clearable maxlength="50" size="large" v-model="title" placeholder="文章标题" />
-        <div class="subject_title" style="height: 10px">xxx</div>
+        <Input  style="width: 100%;" clearable maxlength="50" size="large" v-model="title" placeholder="标题" />
+        <div class="subject_title" >
+          xxx
+        </div>
       </div>
     </NavigateBar>
 
@@ -33,6 +35,11 @@ export default {
   },
   methods:{
     save: function(value, render){
+      // 弹出上传提示
+      const msg = this.$Message.loading({
+        content: '保存中...',
+        duration: 0
+      })
       postArticles(
         {
           "action": "post",
@@ -43,9 +50,14 @@ export default {
             "content": value
           }
         }).then(value =>{
-          console.log(value)
+          // 保存成功
+          setTimeout(msg,0);
+          // 打印成功
+          this.$Message.success('保存成功')
         }).catch(err =>{
-          console.log(err)
+          // 保存失败
+          setTimeout(msg,0);
+          this.$Message.success('保存失败')
         })
 
     }
@@ -57,19 +69,39 @@ export default {
 
 .title{
   height: 100%;
-  display: flex;
-  flex-flow:row wrap;
-  justify-content: flex-start;
-  align-items: center;
+  padding: 0;
   /deep/ .ivu-input-large  {
     border: 0;
-    font-size: 18px
+    font-size: 20px;
+    font-weight: bold;
+    height: 30px;
+    border-style: none;
+
     
   };
   /deep/ ivu-input-type-text{
     width: 100% !important;
-    border-bottom: 1px solid #666;
+    
   };
+  // 标题栏
+  /deep/ .ivu-input{
+    padding: 0;
+    margin-top: 5px;
+    border: 0;
+    
+    
+  }
+
+  /deep/ .ivu-input:focus{
+    box-shadow: none;
+  }
+    
+  
+
+  .subject_title{
+    height: 25px;
+    color: #808695;
+  }
 }
 
 .editor{
@@ -80,8 +112,5 @@ export default {
   bottom: 10px;
   }
 
-.ivu-input{
-  background-color: #000;
-}
 
 </style>
